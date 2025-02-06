@@ -9,9 +9,9 @@ public class ReplaceTextCommand extends TextCommand{
     if(text.contains(target)){
       return text.replace(target, replacement);
     }else{
-      System.out.println("Target was not found in the given text");
+      //System.out.println("Target was not found in the given text");
+      throw new IllegalArgumentException("Target was not found in the given text");
     }
-    return text;
   }
 
 
