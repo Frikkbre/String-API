@@ -16,10 +16,10 @@ public class WrapTextCommand implements TextCommand {
    */
   @Override
   public String execute(String text) {
-    if (text == null) {
+    if (text == null || text.isBlank()) {
       throw new IllegalArgumentException("Text cannot be null");
     } else {
-      return opening + text + end;
+      return opening + " " + text + " " + end;
     }
   }
 }
