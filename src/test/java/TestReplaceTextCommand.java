@@ -7,16 +7,16 @@ public class TestReplaceTextCommand {
 
   @Test
   public void testReplaceText() {
-    ReplaceTextCommand replace = new ReplaceTextCommand();
-    String result = replace.replaceTextCommand("This is a text", "text", "replaced text");
+    ReplaceTextCommand replace = new ReplaceTextCommand("text", "replaced text");
+    String result = replace.execute("This is a text");
     assertEquals("This is a replaced text", result);
   }
 
   @Test
   public void testNoReplacement() {
-    ReplaceTextCommand replace = new ReplaceTextCommand();
+    ReplaceTextCommand replace = new ReplaceTextCommand("fish", "cat");
     assertThrows(IllegalArgumentException.class, () ->
-        replace.replaceTextCommand("This is a text", "fish", "fishes")
+        replace.execute("This is a text")
     );
     }
   }
