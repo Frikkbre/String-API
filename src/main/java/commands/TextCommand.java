@@ -1,4 +1,5 @@
 package commands;
 
-public class TextCommand {
+public interface TextCommand {
+  String execute(String text);
 }
