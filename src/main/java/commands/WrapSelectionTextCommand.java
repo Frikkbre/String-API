@@ -7,17 +7,33 @@ package commands;
  */
 public class WrapSelectionTextCommand extends WrapTextCommand{
     private String selection;
+    private String opening;
+    private String end;
 
-    public WrapSelectionTextCommand(String selection, String wrap) {
-        super(wrap);
+
+    public WrapSelectionTextCommand(String selection, String opening, String end) {
+        super(opening, end);
         this.selection = selection;
+        //super(opening, end);
+        this.opening = opening;
+        this.end = end;
+
     }
 
     public String getSelection() {
         return selection;
     }
 
-    public String execute() {
-        return wrap + selection + wrap;
+    public String execute(String text) {
+        if (text == null || text.isBlank()) {
+            throw new IllegalArgumentException("Text cannot be null or blank");
+        }
+        if (selection == null || selection.isBlank()) {
+            throw new IllegalArgumentException("Selection cannot be null or blank");
+        }
+        if (!text.contains(selection)) {
+            throw new IllegalArgumentException("Selection not found in text");
+        }
+        return text.replace(selection, opening + " " + selection + " " + end);
     }
 }
