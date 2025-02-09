@@ -1,10 +1,10 @@
 package commands;
 
 /**
- * CapitalizeWordsTextCommand
+ * CapitalizeTextCommand
  */
-public class CapitalizeWordsTextCommand implements TextCommand{
-  public CapitalizeWordsTextCommand(){
+public class CapitalizeTextCommand implements TextCommand{
+  public CapitalizeTextCommand(){
   }
 
   /**
