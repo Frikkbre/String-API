@@ -11,6 +11,11 @@ public class WrapLinesTextCommand extends WrapTextCommand {
         super(opening, end);
     }
 
+    /**
+     * Wraps every line of the given text with the opening and end strings
+     * @param text
+     * @return the wrapped text
+     */
     @Override
     public String execute(String text) {
         if (text == null || text.isBlank()) {
