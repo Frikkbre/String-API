@@ -10,7 +10,12 @@ public class WrapSelectionTextCommand extends WrapTextCommand{
     private String opening;
     private String end;
 
-
+    /**
+     * Constructor that takes in the selection, opening and end strings.
+     * @param selection
+     * @param opening
+     * @param end
+     */
     public WrapSelectionTextCommand(String selection, String opening, String end) {
         super(opening, end);
         this.selection = selection;
@@ -20,10 +25,19 @@ public class WrapSelectionTextCommand extends WrapTextCommand{
 
     }
 
+    /**
+     * Getter for the selection string
+     * @return
+     */
     public String getSelection() {
         return selection;
     }
 
+    /**
+     * Wraps the selection string with the opening and end strings
+     * @param text
+     * @return
+     */
     public String execute(String text) {
         if (text == null || text.isBlank()) {
             throw new IllegalArgumentException("Text cannot be null or blank");
