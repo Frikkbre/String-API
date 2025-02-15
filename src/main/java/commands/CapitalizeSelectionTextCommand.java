@@ -4,7 +4,7 @@ package commands;
  * CapitalizeSelectionTextCommand capitalizes a selection of the text defined by target variable
  * and returns the result.
  */
-public class CapitalizeSelectionTextCommand {
+public class CapitalizeSelectionTextCommand extends CapitalizeTextCommand {
   String target;
 
   public CapitalizeSelectionTextCommand(String target){
